@@ -28,7 +28,7 @@ test('problem_user', async ({ page }) => {
   await page.locator('[data-test="password"]').click();
   await page.locator('[data-test="password"]').fill('secret_sauce');
   await page.locator('[data-test="login-button"]').click();
-  await expect(page.locator('[data-test="error"]')).toBeVisible();
+  await expect(page.locator('[data-test="title"]')).toBeVisible();
 });
 
 test('performance_glitch_user', async ({ page }) => {
@@ -38,7 +38,7 @@ test('performance_glitch_user', async ({ page }) => {
   await page.locator('[data-test="password"]').click();
   await page.locator('[data-test="password"]').fill('secret_sauce');
   await page.locator('[data-test="login-button"]').click();
-  await expect(page.locator('[data-test="error"]')).toBeVisible();
+  await expect(page.locator('[data-test="title"]')).toBeVisible();
 });
 
 test('error_user', async ({ page }) => {
@@ -48,7 +48,7 @@ test('error_user', async ({ page }) => {
   await page.locator('[data-test="password"]').click();
   await page.locator('[data-test="password"]').fill('secret_sauce');
   await page.locator('[data-test="login-button"]').click();
-  await expect(page.locator('[data-test="error"]')).toBeVisible();
+  await expect(page.locator('[data-test="title"]')).toBeVisible();
 });
 
 test('visual_user', async ({ page }) => {
@@ -58,11 +58,5 @@ test('visual_user', async ({ page }) => {
   await page.locator('[data-test="password"]').click();
   await page.locator('[data-test="password"]').fill('secret_sauce');
   await page.locator('[data-test="login-button"]').click();
-  await expect(page.locator('[data-test="error"]')).toBeVisible();
+  await expect(page.locator('[data-test="title"]')).toBeVisible();
 });
-
-
-
-
-
-

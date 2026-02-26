@@ -2,10 +2,24 @@
 import {test,expect} from "@playwright/test" ;
 import { TIMEOUT } from "node:dns";
 
-test('test', async ({ page }) => {
+let status = {
+
+  status1 : "Active",
+  status2 : "InActive", 
+  status3 : "Pending"
+
+}
+
+for (let i in status)
+{
+  console.log(`${status[i]}`)
+}
+
+
+test('creating employment status `${status[i]}` ', async ({ page }) => {
 
     //Accessing URL
-    await page.goto('https://opensource-demo.orangehrmlive.com/web/index.php/auth/login')
+    await page.goto('/web/index.php/auth/login')
 
    //filling user name
     await page.locator("//input[@placeholder='Username']").fill('Admin')
@@ -26,13 +40,17 @@ test('test', async ({ page }) => {
     
     await page.locator("//a[normalize-space(text())='Employment Status']").click()
 
-    //clcik on the add
+    //click on the add
     
     await page.locator("//button[contains(.,'Add')]").click()
 
+    // create random chars
+    const random5Chars = () =>
+    Math.random().toString(36).substring(2, 7);
+
     // adding emploment status
 
-    await page.locator("//span[normalize-space(text())='More']/following::input").fill('UMA')
+    await page.locator("//label[normalize-space(text())='Name']/following::input").fill(`${status[i]}`)
 
     // click on save
     

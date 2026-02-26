@@ -18,7 +18,7 @@ export default defineConfig({
  timeout:60000,
  expect: {timeout:60000},
  
-  testDir: './tests',
+  testDir: '../tests',
   /* Run tests in files in parallel */
   fullyParallel: false,
   /* Fail the build on CI if you accidentally left test.only in the source code. */
